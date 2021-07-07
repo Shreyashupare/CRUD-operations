@@ -1,0 +1,45 @@
+.footer{
+    height: 50px;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--white);
+}
+.footerlinks{
+    padding-right: 25px;
+    float:right;
+    padding-top:17px;
+}
+.logo{
+    height: 30px;
+    margin-top:10px;
+}
+
+.persistent{
+    height: 18px;
+    margin-left: 10px;
+    margin-bottom: 7px;
+    margin-right: 10px;
+}
+
+.footerlink{
+    text-decoration: none;
+    border-right: 1px solid var(--footerlink);
+    padding-right: 10px;
+    padding-left:10px;
+}
+
+.footerlink1{
+    text-decoration: none;
+    padding-left:10px;
+    padding-right: 10px;
+}
+.footerlink:hover{
+    color:var(--footerlinkhover);
+}
+.footerlink1:hover{
+    color:var(--footerlinkhover);
+}
+a{
+    color:var(--footerlink);
+}

@@ -1,0 +1,52 @@
+
+<form [formGroup]="addemployeeform">
+    <h6 mat-dialog-title>Add New Employee</h6><br>
+    <mat-dialog-content>
+      <label for="firstname">First Name</label><br>
+      <input class="input" name="firstname"><br>
+    
+      <label for="lastname">Last Name</label><br>
+      <input class="input" name="lastname"><br>
+    
+      <label for="id">ID</label><br>
+      <input class="input" name="id"><br>
+    
+      <label for="gender">Gender</label><br>
+      <input class="input" name="gender" list="gender"> <br>
+      <datalist id="gender">
+        <option value="Male"></option>
+        <option value="Female"></option>
+        <option value="Other"></option>
+      </datalist>
+    
+      <label for="gender">Grade</label><br>
+      <input class="input" name="grade" list="grade" formControlName="id"> <br>
+      <datalist id="grade">
+        <option value="1x"></option>
+        <option value="2x"></option>
+        <option value="3x"></option>
+        <option value="4x"></option>
+        <option value="5x"></option>
+      </datalist>
+    
+      <label for="odc">ODC/Non ODC</label><br>
+      <input class="input" name="odc" list="odc"> <br>
+      <datalist id="odc">
+        <option value="ODC"></option>
+        <option value="Non ODC"></option>
+      </datalist>
+    
+      <label for="bu">BU</label><br>
+      <input class="input" type="text"><br>
+    
+      <label for="bu">Project</label><br>
+      <input class="input" type="text"><br>
+    </mat-dialog-content>
+    <div class="display_error" *ngIf="addemployeeform.invalid&&addemployeeform.touched">
+      All fields are mandatory.
+    </div>
+    <mat-dialog-actions class="buttons">
+      <button class="cancle_button" mat-dialog-close>Cancle</button>
+      <button class="add_button" mat-dialog-close (click)="openSnackBar()">Add</button>
+  </mat-dialog-actions>
+  </form>

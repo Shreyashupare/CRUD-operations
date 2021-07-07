@@ -1,0 +1,13 @@
+
+<mat-toolbar class="header"> 
+    <div>My Bookings</div>
+    <div>
+        <span>Employee</span>
+        <span>
+            <button mat-button [matMenuTriggerFor]="menu" #menuTrigger>Profile</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">Logout</button>
+            </mat-menu>
+        </span>
+    </div>
+</mat-toolbar>
