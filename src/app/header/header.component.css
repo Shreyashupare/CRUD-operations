@@ -8,3 +8,17 @@
 span{
     padding-right: 1rem;
 }
+
+.toggle{
+    border-radius: 50%;
+    background-color: var(--header_bg);
+    border:none;
+    padding:5px;
+    color: var(--white);
+}
+.toggle1{
+    border-radius: 50%;
+    background-color: var(--header_bg);
+    padding:5px;
+    color: var(--white);
+}

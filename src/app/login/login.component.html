@@ -2,7 +2,7 @@
     <form [formGroup]="loginform">
         <p>Login</p>
         <input class="input" type="text" placeholder="Email ID" formControlName="email"><br>
-        <input class="input" type="text" placeholder="Password" formControlName="password"><br>
+        <input class="input" type="password" placeholder="Password" formControlName="password"><br>
 
         <div *ngIf="loginform.controls.email.invalid&&loginform.controls.email.touched">
             <div class="error_msg" *ngIf="loginform.controls['email'].errors?.required">
@@ -15,6 +15,9 @@
                 Password is required
             </div>
 
+        </div>
+        <div class="error_msg" *ngIf="incorrect">
+            Incorrect username or password
         </div>
 
         <button class="login_button"  (click)="login()">Login</button>

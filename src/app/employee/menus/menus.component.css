@@ -1,0 +1,15 @@
+.options:hover{
+    background-color: var(--lightblue);
+
+}
+
+.menus{
+    border:1px solid blueviolet;
+    width: 175px;
+}
+
+::ng-deep .mat-menu{
+    margin-top: 10px;
+    margin:0px;
+    padding:0px;
+}

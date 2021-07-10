@@ -1,0 +1,24 @@
+.yes{
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background-color: var(--orange);
+    color: white;
+    border:none;
+}
+
+.yes:hover{
+    background-color: var(--button_hover);
+}
+.no{
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    border:1px solid var(--grey);
+    color:var(--orange);
+    margin-right: 10px;
+}
+
+.no:hover{
+    border-color: var(--orange);
+}

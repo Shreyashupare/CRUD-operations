@@ -1,18 +1,18 @@
 
 <form [formGroup]="addemployeeform">
-    <h6 mat-dialog-title>Add New Employee</h6><br>
+    <h6 mat-dialog-title>{{title}}</h6><br>
     <mat-dialog-content>
       <label for="firstname">First Name</label><br>
-      <input class="input" name="firstname"><br>
+      <input class="input" name="firstname" formControlName="firstname"><br>
     
       <label for="lastname">Last Name</label><br>
-      <input class="input" name="lastname"><br>
+      <input class="input" name="lastname" formControlName="lastname"><br>
     
-      <label for="id">ID</label><br>
-      <input class="input" name="id"><br>
-    
+      <!-- <label for="id">ID</label><br>
+      <input class="input" name="id" formControlName="id"><br>
+     -->
       <label for="gender">Gender</label><br>
-      <input class="input" name="gender" list="gender"> <br>
+      <input class="input" name="gender" list="gender" formControlName="gender"> <br>
       <datalist id="gender">
         <option value="Male"></option>
         <option value="Female"></option>
@@ -20,7 +20,7 @@
       </datalist>
     
       <label for="gender">Grade</label><br>
-      <input class="input" name="grade" list="grade" formControlName="id"> <br>
+      <input class="input" name="grade" list="grade" formControlName="grade"> <br>
       <datalist id="grade">
         <option value="1x"></option>
         <option value="2x"></option>
@@ -30,23 +30,23 @@
       </datalist>
     
       <label for="odc">ODC/Non ODC</label><br>
-      <input class="input" name="odc" list="odc"> <br>
+      <input class="input" name="odc" list="odc" formControlName="odc"> <br>
       <datalist id="odc">
         <option value="ODC"></option>
         <option value="Non ODC"></option>
       </datalist>
     
       <label for="bu">BU</label><br>
-      <input class="input" type="text"><br>
+      <input class="input" type="text" formControlName="bu"><br>
     
       <label for="bu">Project</label><br>
-      <input class="input" type="text"><br>
+      <input class="input" type="text" formControlName="project"><br>
     </mat-dialog-content>
     <div class="display_error" *ngIf="addemployeeform.invalid&&addemployeeform.touched">
       All fields are mandatory.
     </div>
     <mat-dialog-actions class="buttons">
-      <button class="cancle_button" mat-dialog-close>Cancle</button>
-      <button class="add_button" mat-dialog-close (click)="openSnackBar()">Add</button>
+      <button class="cancle_button" mat-dialog-close="cancle">Cancle</button>
+      <button class="add_button" mat-dialog-close="add" (click)="addemployee()">{{add_edit_button}}</button>
   </mat-dialog-actions>
   </form>

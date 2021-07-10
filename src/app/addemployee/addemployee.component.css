@@ -53,3 +53,7 @@ h6{
     font-size: 14px;
     color: red;
 }
+
+.option:hover{
+background-color: var(--lightblue);
+}

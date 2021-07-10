@@ -1,0 +1,10 @@
+<button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+
+  <mat-menu class="mat-menu" #menu="matMenu">
+    <div class="menus">
+      <button class="options" mat-menu-item (click)="view()" [disabled]= "isdisabled">View</button>
+      <button class="options" mat-menu-item (click)="edit()" [disabled]= "isdisabled">Edit</button>
+      <button class="options" mat-menu-item (click)="changestatus()">{{statusofactivation}}</button>
+      <button class="options" mat-menu-item (click)="deletedialogue()">Delete</button>
+    </div>
+  </mat-menu>

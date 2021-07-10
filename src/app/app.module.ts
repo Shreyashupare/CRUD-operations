@@ -1,3 +1,6 @@
+import { DeletedialogueComponent } from './employee/menus/deletedialogue/deletedialogue.component';
+import { MenusComponent } from './employee/menus/menus.component';
+import { DisplayComponent } from './header/display/display.component';
 import { LogoutDisplayComponent } from './header/logout-display/logout-display.component';
 import { MaterialModule } from './material/material.module';
 
@@ -22,7 +25,10 @@ import { EmployeeComponent } from './employee/employee.component';
     HeaderComponent,
     AddemployeeComponent,
     EmployeeComponent,
-    LogoutDisplayComponent
+    LogoutDisplayComponent,
+    DisplayComponent,
+    MenusComponent,
+    DeletedialogueComponent
   ],
   imports: [
     BrowserModule,
