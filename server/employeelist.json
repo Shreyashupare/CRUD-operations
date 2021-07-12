@@ -1,3 +1,37 @@
 {
-  "employees": []
+  "employees": [
+    {
+      "is_active": true,
+      "firstname": "vrushabh",
+      "lastname": "hpare",
+      "gender": "Male",
+      "grade": "1x",
+      "odc": "ODC",
+      "bu": "-",
+      "project": "-",
+      "id": 2
+    },
+    {
+      "is_active": true,
+      "firstname": "shreyas",
+      "lastname": "hupare",
+      "gender": "Male",
+      "grade": "5x",
+      "odc": "ODC",
+      "bu": "bu",
+      "project": "hotdeskingadmin",
+      "id": 3
+    },
+    {
+      "is_active": true,
+      "firstname": "prathamesh",
+      "lastname": "thombare",
+      "gender": "Male",
+      "grade": "5x",
+      "odc": "ODC",
+      "bu": "bu",
+      "project": "project",
+      "id": 4
+    }
+  ]
 }

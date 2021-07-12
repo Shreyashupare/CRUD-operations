@@ -96,7 +96,9 @@
           </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedCols"></tr>
-      <tr mat-row *matRowDef="let employee; columns: displayedCols;" [ngClass]= "{ 'disable': isdisable}"></tr>
+      <!--for disable that id - [ngClass]="{'disabled':employee.id === 'id_disable'}" -->
+      <!--  [ngClass]="{'disabled':isdisable}" -->
+      <tr mat-row *matRowDef="let employee; columns: displayedCols;" [ngClass]="{'disabled': !employee.is_active}"></tr>
   </table>
   <div class="paginator">
     <mat-paginator [pageSizeOptions]="[5, 10, 15]"></mat-paginator>

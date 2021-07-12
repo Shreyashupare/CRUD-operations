@@ -15,10 +15,5 @@ span{
     border:none;
     padding:5px;
     color: var(--white);
-}
-.toggle1{
-    border-radius: 50%;
-    background-color: var(--header_bg);
-    padding:5px;
-    color: var(--white);
+    margin-top: 5px;
 }

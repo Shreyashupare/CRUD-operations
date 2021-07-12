@@ -23,6 +23,7 @@ export class AddemployeeComponent implements OnInit {
   constructor(private empser:EmployeeService, private snackbar:SnackbarService, @Inject(MAT_DIALOG_DATA) public dataeditvalue:any) { 
     this.addemployeeform = new FormGroup({
       id: new FormControl('',[]),
+      is_active: new FormControl('',[]),
       firstname: new FormControl('',[Validators.required]),
       lastname: new FormControl('',[Validators.required]),
       gender: new FormControl('',[Validators.required]),
@@ -36,12 +37,8 @@ export class AddemployeeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //get the lenghth of emoloyeelist to generate id
-    // this.empser.getemployeedetails().subscribe(data =>{
-    //   this.employeelist = data;
-    //   this.length = this.length + this.employeelist.length;
-    // })
-    this.length = this.empser.getgeneratedid();
+    
+
     if(this.dataeditvalue.edit){
       this.title="Edit employee";
       this.add_edit_button="Edit";
@@ -53,10 +50,12 @@ export class AddemployeeComponent implements OnInit {
       this.addemployeeform.controls.bu.setValue(this.dataeditvalue.cur_emp_data.bu);
       this.addemployeeform.controls.project.setValue(this.dataeditvalue.cur_emp_data.project);
       this.addemployeeform.controls.id.setValue(this.dataeditvalue.cur_emp_data.id);
+      this.addemployeeform.controls.is_active.setValue(this.dataeditvalue.cur_emp_data.is_active);
     }
     else{
       this.title="Add new employee";
       this.add_edit_button="Add";
+      this.addemployeeform.controls.is_active.setValue(true);
     }
   }
   addemployee() {

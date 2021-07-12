@@ -10,7 +10,7 @@
             </mat-menu>
         </span>
         <span>
-            <mat-icon [matMenuTriggerFor]="menu" #menuTrigger class="toggle1" *ngIf= "logged">account_circle</mat-icon>
+            <mat-icon [matMenuTriggerFor]="menu" #menuTrigger class="toggle" *ngIf= "logged">perm_identity</mat-icon>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item (click)="logout()">Logout</button>
             </mat-menu>

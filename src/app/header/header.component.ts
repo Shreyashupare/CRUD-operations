@@ -15,12 +15,29 @@ export class HeaderComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    if(sessionStorage.getItem("islog")==null){
+      this.logged = false;
+    }
+    else{
+      this.logged = true;
+    }
+    // this.log.getlog().subscribe((res)=>{
+    //   console.log("reload header component"+ res);
+    //   this.router.navigateByUrl("header");
+    //   this.router.navigate([this.router.url]);
+
+    // })
+    //this.logged = JSON.parse(sessionStorage.getItem("islog") || "{}");
     this.log.getlog().subscribe(islogged=>{
       this.logged = islogged;
     })
   }
   logout() {
+    this.logged = false;
+    //sessionStorage.setItem("islog", JSON.stringify(this.logged));
+
     const dialogRef = this.dialog.open(LogoutDisplayComponent, {restoreFocus: false});
+    sessionStorage.clear();
     this.router.navigateByUrl('/login');
   }
   notifications(){

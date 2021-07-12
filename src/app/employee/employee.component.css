@@ -39,7 +39,11 @@ th{
     color:var(--blue);
 }
 .center{
-    display: block;
+    width: 100%;
+    height: 65vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
@@ -61,6 +65,12 @@ th{
     background-color: var(--lightblue);
 }
 
-.disable{
-    color: red;
+
+.disabled {
+    background-color: var(--grey);
 }
+/* .disable{
+    pointer-events: none;
+    cursor: not-allowed;
+    color: grey;
+} */

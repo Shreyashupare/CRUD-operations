@@ -12,6 +12,8 @@ export class LoginService {
   subject = new Subject<boolean>();
     setlog(islogin:boolean){
       this.subject.next(islogin);
+
+      sessionStorage.setItem("islog", JSON.stringify(islogin));
     }
     getlog():Observable<boolean>{
       return this.subject.asObservable();

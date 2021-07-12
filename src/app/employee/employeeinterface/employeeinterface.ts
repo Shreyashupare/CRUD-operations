@@ -6,5 +6,6 @@ export interface employee{
     grade:string,
     odc:string,
     bu:string,
-    project:string
+    project:string,
+    is_active:boolean
 }

@@ -7,12 +7,25 @@ import { employee } from '../employee/employeeinterface/employeeinterface';
   providedIn: 'root'
 })
 export class EmployeeService {
-  generate_id:number=10;
+
   private _url:string = "assets/json_files/employeelist.json"
   private _url2:string = "http://localhost:3001/employees"
   //http://localhost:3001/employees
   private subject = new Subject<any>();
+
+  private subject2 = new Subject<any>();
   constructor(private http:HttpClient) { }
+
+  //to refresh the employee component when there is no employee on list
+  private subject3 = new Subject<any>();
+  set_check(){
+    this.subject3.next();
+  }
+
+  get_check():Observable<any>{
+    return this.subject3.asObservable();
+  }
+  
 
   setemployeedetails() {
     this.http.get("http://localhost:3001/employees")
@@ -30,16 +43,12 @@ export class EmployeeService {
     this.setemployeedetails();
     return this.subject.asObservable();
   }
+  
 
-  getgeneratedid(){
-    this.generate_id = this.generate_id +1;
-    return this.generate_id;
-  }
   addemployee(employee:object){
     this.http.post("http://localhost:3001/employees", employee).subscribe((employee:any)=>{
       console.log(employee);
       this.getemployeedetails();
-      this.getgeneratedid();
     })
   }
 

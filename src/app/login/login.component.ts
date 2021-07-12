@@ -1,8 +1,10 @@
+
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { user } from './loginuserinterface/userinterface';
+import { SnackbarService } from '../services/snackbar.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,9 +15,9 @@ export class LoginComponent implements OnInit {
   islogin:boolean=false;
   incorrect:boolean=false;
   private employeelist:user[] = [];
-  constructor(private log:LoginService, private router:Router) { 
+  constructor(private log:LoginService, private router:Router, private snackbar: SnackbarService) { 
     this.loginform = new FormGroup({
-      email: new FormControl('',[Validators.required]),
+      email: new FormControl('',[Validators.required, Validators.email]),
       password: new FormControl('',[Validators.required])
     })
   }
@@ -40,8 +42,11 @@ export class LoginComponent implements OnInit {
         if(this.employeelist[i].email == c_email){
           if(this.employeelist[i].password == c_password){
             console.log("signed in");
-            this.log.setlog(true);
+            this.islogin = true;
+            this.log.setlog(this.islogin);
+            sessionStorage.setItem("islog", JSON.stringify(this.islogin));
             this.router.navigateByUrl("/employ");
+            this.snackbar.openSnackBar_success("You are logged in", "okay");
           }
           else{
             this.incorrect=true;
@@ -58,6 +63,7 @@ export class LoginComponent implements OnInit {
     else{
       return;
     }
+    
   }
 
 }

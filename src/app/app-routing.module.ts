@@ -3,7 +3,8 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { LogoutGuard } from 'server/logout.guard';
+import { HeaderComponent } from './header/header.component';
 const routes: Routes = [
   {
     path:"",
@@ -15,16 +16,21 @@ const routes: Routes = [
   },
   {
     path:"employ",
-    component:EmployeeComponent
+    component:EmployeeComponent,
+    canActivate:[LogoutGuard]
   },
   {
     path:"addemploy",
     component:AddemployeeComponent
+  },
+  {
+    path:"header",
+    component:HeaderComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{ onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
